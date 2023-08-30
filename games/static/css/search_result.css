@@ -1,0 +1,25 @@
+.search_list{
+    text-align: center;
+    padding: 70px;
+}
+
+.search_list a{
+    color: white;
+    list-style-type: none;
+    font-size: 25px;
+    text-decoration: none;
+
+}
+
+.search_list a:hover{
+    color: #3498db;
+}
+
+.search_list ul {
+    list-style: none;
+}
+
+.search_list li {
+    margin-bottom: 10px;
+    padding: 10px;
+}

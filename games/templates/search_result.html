@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ... -->
+<head>
+    <meta charset="UTF-8">
+    <title>Search Games</title>
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/search_result.css" />
+
+</head>
+<body>
+    <!-- ... -->
+    <!--Buttons and search bar and logo-->
+    <header class="header">
+<!--Gaming logo        -->
+        <img class="gaming_logo" src="{{ url_for('static', filename='gaming_logo.jpg') }}" alt="gaming logo">
+<!--Button and search bar        -->
+        <div class="button_and_search">
+<!--Buttons-->
+            <nav>
+                <ul>
+                    <a href="/">Home</a>
+                    <a href="/browse">All Games</a>
+                    <!-- Add other navigation links as needed -->
+                </ul>
+            </nav>
+    <!--Search bar and search button and search type-->
+            <form class="search_game" action="/search" method="get">
+<!--                search type and search option list-->
+                <select class="search_type" name="search_type">
+                    <option value="title">Title</option>
+                    <option value="id">ID</option>
+                    <option value="price">Price</option>
+                </select>
+<!--                search bar-->
+                <input class="search_bar" type="text" name="query" placeholder="Search for games...">
+<!--                search button-->
+                <input class="search_button" type="image" src="{{ url_for('static', filename='search_logo.jpg') }}" alt="Search">
+            </form>
+        </div>
+    </header>
+
+    <h2>Search result:</h2>
+    <ul class="search_list">
+        {% for game in games %}
+            <li><a href="{{ url_for('games_bp.show_game_detail', game_id = game.game_id)}}">{{ game.title }}</a></li>
+        {% else %}
+            <h2>No games found matching your criteria.</h2>
+        {% endfor %}
+    </ul>
+
+
+    <!-- ... -->
+<!--Creator-->
+    <footer class="copyright">
+        <!-- You can add footer details if needed -->
+        &copy; hche589 | stan363 | ycha624
+    </footer>
+</body>
+</html>
