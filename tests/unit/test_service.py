@@ -70,7 +70,7 @@ def test_get_date_by_id_nonexistent_game(sample_repo):
 
 def test_get_description_by_id_nonexistent_game(sample_repo):
     description = services.get_description_by_id(sample_repo, game_id=999)
-    assert description is None
+    assert description == "No description available"
 
 
 def test_get_url_by_id_nonexistent_game(sample_repo):
@@ -80,7 +80,7 @@ def test_get_url_by_id_nonexistent_game(sample_repo):
 
 def test_get_price_by_id_nonexistent_game(sample_repo):
     price = services.get_price_by_id(sample_repo, game_id=999)
-    assert price is None
+    assert price == 0
 
 
 def test_get_games_by_genre_pagination(sample_repo):

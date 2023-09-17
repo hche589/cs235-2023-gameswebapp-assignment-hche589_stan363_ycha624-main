@@ -59,8 +59,8 @@ def search_games():
         else:
             games = []
     except ValueError:
-        flash('Invalid search value. Please enter a correct value.', 'error')
-        return redirect(url_for('games_bp.browse_games'))
+        games = []
+
 
     return render_template(
         'search_result.html',

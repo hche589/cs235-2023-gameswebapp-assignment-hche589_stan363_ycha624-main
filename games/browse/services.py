@@ -71,14 +71,14 @@ def get_all_genres(repo: AbstractRepository) -> List[Genre]:
 def get_games_by_genre(repo: AbstractRepository, genre_name: str, page_num: int) -> List[Game]:
     return repo.get_games_by_genre(genre_name)
 
-
+'hello world'
 
 def get_title_by_id(repo: AbstractRepository, game_id):
     title = repo.get_title_by_id(game_id)
     if title:
         return title
     else:
-        return None
+        return None 
 
 def get_date_by_id(repo: AbstractRepository, game_id):
     release_date = repo.get_date_by_id(game_id)
@@ -93,7 +93,7 @@ def get_description_by_id(repo: AbstractRepository, game_id) :
     if description:
         return description
     else:
-        return "No description avaliabe"
+        return "No description available"
 
 def get_url_by_id(repo: AbstractRepository, game_id):
     url = repo.get_url_by_id(game_id)
